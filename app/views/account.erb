@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <title>title</title>
     <link rel="stylesheet" href="stylesheets/bootstrap.css" type="text/css">  
   </head>
   <body id="page-top">
+  <% if Helpers.is_logged_in?(session) %>
+  <h1>Welcome <%= @match.username %></h1>
+  <h3>Your Balance: <%= @match.balance  %></h3>
+  <% else %> 
+  <h1>You Must <a href="/">Log In</a> to View Your Balance
+    <% end %></h1>
+  <form action="/logout" method="GET">
     
-
+    <input type="submit" method="submit" value="Log Out">
+  </form>
   </body>
 </html>
