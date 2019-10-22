@@ -5,7 +5,7 @@
   </head>
   <body id="page-top">
   <% if Helpers.is_logged_in?(session) %>
-  <% @match = User.find_by(id: == (session[:user_id]) %>
+  <% @match = User.find_by(id: == (session[:user_id])) %>
   <%binding.pry%>
   <h1>Welcome <%= @match.username %></h1>
   <h3>Your Balance: <%= @match.balance  %></h3>
